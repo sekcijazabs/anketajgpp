@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anketa - GPS softver u međugradskom prevozu</title>
+
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background:#f4f4f4;
+        margin:0;
+        padding:30px;
+    }
+
+    .container{
+        max-width:900px;
+        margin:auto;
+        background:white;
+        padding:40px;
+        border-radius:12px;
+        box-shadow:0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1{
+        text-align:center;
+        color:#1f3c88;
+    }
+
+    h2{
+        text-align:center;
+        font-size:20px;
+        margin-bottom:30px;
+    }
+
+    p{
+        line-height:1.6;
+    }
+
+    .question{
+        margin-bottom:30px;
+    }
+
+    .question h3{
+        margin-bottom:10px;
+        color:#333;
+    }
+
+    label{
+        display:block;
+        margin:8px 0;
+        cursor:pointer;
+    }
+
+    textarea{
+        width:100%;
+        height:100px;
+        padding:10px;
+        border-radius:6px;
+        border:1px solid #ccc;
+        resize:vertical;
+    }
+
+    button{
+        background:#1f3c88;
+        color:white;
+        border:none;
+        padding:15px 30px;
+        font-size:16px;
+        border-radius:8px;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#162d66;
+    }
+
+    .center{
+        text-align:center;
+        margin-top:40px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>АНКЕТА</h1>
+
+<h2>Примена GPS софтвера у међуградском аутобуском превозу</h2>
+
+<p>
+Поштовани,<br><br>
+Анкета је анонимна и спроводи се у сврху истраживања за потребе стручног рада из области друмског саобраћаја.
+Циљ анкете је испитивање ставова путника о примени GPS и информационих система у међуградском аутобуском превозу.
+</p>
+
+<form>
+
+<div class="question">
+    <h3>1. Пол</h3>
+    <label><input type="radio" name="pol"> Мушки</label>
+    <label><input type="radio" name="pol"> Женски</label>
+</div>
+
+<div class="question">
+    <h3>2. Старосна група</h3>
+    <label><input type="radio" name="godine"> До 18 година</label>
+    <label><input type="radio" name="godine"> 18–25</label>
+    <label><input type="radio" name="godine"> 26–40</label>
+    <label><input type="radio" name="godine"> 41–60</label>
+    <label><input type="radio" name="godine"> Преко 60 година</label>
+</div>
+
+<div class="question">
+    <h3>3. Колико често користите међуградски аутобуски превоз?</h3>
+    <label><input type="radio" name="prevoz"> Свакодневно</label>
+    <label><input type="radio" name="prevoz"> Неколико пута недељно</label>
+    <label><input type="radio" name="prevoz"> Неколико пута месечно</label>
+    <label><input type="radio" name="prevoz"> Ретко</label>
+</div>
+
+<div class="question">
+    <h3>4. Да ли користите мобилне апликације или интернет за проверу реда вожње?</h3>
+    <label><input type="radio" name="internet"> Да</label>
+    <label><input type="radio" name="internet"> Не</label>
+</div>
+
+<div class="question">
+    <h3>5. Колико су Вам важне информације о тренутној локацији аутобуса?</h3>
+    <label><input type="radio" name="lokacija"> Веома важне</label>
+    <label><input type="radio" name="lokacija"> Важне</label>
+    <label><input type="radio" name="lokacija"> Делимично важне</label>
+    <label><input type="radio" name="lokacija"> Нису важне</label>
+</div>
+
+<div class="question">
+    <h3>6. Да ли сте некада каснили због нетачних информација о поласку?</h3>
+    <label><input type="radio" name="kasnjenje"> Да</label>
+    <label><input type="radio" name="kasnjenje"> Не</label>
+</div>
+
+<div class="question">
+    <h3>7. Колико би GPS праћење аутобуса повећало Ваше поверење у превозника?</h3>
+    <label><input type="radio" name="poverenje"> Значајно</label>
+    <label><input type="radio" name="poverenje"> Делимично</label>
+    <label><input type="radio" name="poverenje"> Врло мало</label>
+    <label><input type="radio" name="poverenje"> Не би утицало</label>
+</div>
+
+<div class="question">
+    <h3>8. Да ли сматрате да GPS системи могу смањити кашњења?</h3>
+    <label><input type="radio" name="gps"> Да</label>
+    <label><input type="radio" name="gps"> Делимично</label>
+    <label><input type="radio" name="gps"> Не</label>
+    <label><input type="radio" name="gps"> Немам став</label>
+</div>
+
+<div class="question">
+    <h3>9. Која је највећа предност GPS система у аутобуском превозу?</h3>
+    <label><input type="radio" name="prednost"> Праћење возила у реалном времену</label>
+    <label><input type="radio" name="prednost"> Тачније информације о кашњењу</label>
+    <label><input type="radio" name="prednost"> Већа безбедност</label>
+    <label><input type="radio" name="prednost"> Боља организација превоза</label>
+</div>
+
+<div class="question">
+    <h3>10. Да ли бисте користили апликацију за live праћење аутобуса?</h3>
+    <label><input type="radio" name="live"> Да</label>
+    <label><input type="radio" name="live"> Не</label>
+</div>
+
+<div class="question">
+    <h3>11. Како оцењујете информисаност путника у међуградском превозу?</h3>
+    <label><input type="radio" name="ocena"> 1</label>
+    <label><input type="radio" name="ocena"> 2</label>
+    <label><input type="radio" name="ocena"> 3</label>
+    <label><input type="radio" name="ocena"> 4</label>
+    <label><input type="radio" name="ocena"> 5</label>
+</div>
+
+<div class="question">
+    <h3>12. Да ли сматрате да би увођење савремених софтвера побољшало квалитет међуградског превоза?</h3>
+    <label><input type="radio" name="softver"> Да</label>
+    <label><input type="radio" name="softver"> Делимично</label>
+    <label><input type="radio" name="softver"> Не</label>
+</div>
+
+<div class="question">
+    <h3>13. Шта бисте највише унапредили у међуградском аутобуском превозу?</h3>
+    <textarea placeholder="Унесите Ваш одговор..."></textarea>
+</div>
+
+<div class="center">
+    <button type="submit">Пошаљи анкету</button>
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
