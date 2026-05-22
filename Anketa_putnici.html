@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анкета - Примена GPS и телематичких система у међуградском аутобуском превозу</title>
+
+<style>
+:root{
+    --navy:#1E2761;
+    --navy-dark:#0F1638;
+    --ice:#CADCFC;
+    --gold:#F5C518;
+    --text:#1A1A1A;
+    --gray:#6B7280;
+    --bg:#F4F5F8;
+    --border:#D1D5DB;
+}
+
+*{box-sizing:border-box;}
+
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, sans-serif;
+    background:var(--bg);
+    margin:0;
+    padding:30px 15px;
+    color:var(--text);
+    line-height:1.6;
+}
+
+.container{
+    max-width:880px;
+    margin:auto;
+    background:white;
+    padding:0;
+    border-radius:14px;
+    box-shadow:0 4px 25px rgba(0,0,0,0.08);
+    overflow:hidden;
+}
+
+.header{
+    background:var(--navy);
+    color:white;
+    padding:40px 50px;
+    text-align:center;
+    border-top:5px solid var(--gold);
+}
+
+.header h1{
+    margin:0 0 10px 0;
+    font-size:28px;
+    letter-spacing:1px;
+}
+
+.header h2{
+    margin:0;
+    font-size:17px;
+    font-weight:400;
+    color:var(--ice);
+    font-style:italic;
+}
+
+.intro{
+    padding:30px 50px 10px 50px;
+    background:#FBFCFE;
+    border-bottom:1px solid var(--border);
+}
+
+.intro p{
+    margin:0 0 12px 0;
+    color:var(--text);
+    font-size:15px;
+}
+
+.intro strong{
+    color:var(--navy);
+}
+
+form{
+    padding:40px 50px;
+}
+
+.section-title{
+    color:var(--navy);
+    font-size:18px;
+    font-weight:700;
+    margin:30px 0 20px 0;
+    padding-bottom:10px;
+    border-bottom:2px solid var(--ice);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+}
+
+.section-title:first-of-type{
+    margin-top:0;
+}
+
+.question{
+    margin-bottom:28px;
+    padding:18px 22px;
+    background:#FAFBFD;
+    border-left:3px solid var(--navy);
+    border-radius:6px;
+}
+
+.question h3{
+    margin:0 0 14px 0;
+    color:var(--text);
+    font-size:15px;
+    font-weight:600;
+    line-height:1.45;
+}
+
+.question h3 .num{
+    display:inline-block;
+    background:var(--navy);
+    color:white;
+    width:26px;
+    height:26px;
+    line-height:26px;
+    border-radius:50%;
+    text-align:center;
+    font-size:13px;
+    margin-right:8px;
+    vertical-align:middle;
+}
+
+label{
+    display:flex;
+    align-items:center;
+    margin:7px 0;
+    padding:8px 12px;
+    cursor:pointer;
+    border-radius:5px;
+    transition:background 0.15s;
+    font-size:14px;
+}
+
+label:hover{
+    background:var(--ice);
+}
+
+label input[type="radio"],
+label input[type="checkbox"]{
+    margin-right:10px;
+    accent-color:var(--navy);
+    transform:scale(1.1);
+}
+
+textarea{
+    width:100%;
+    min-height:90px;
+    padding:12px;
+    border-radius:6px;
+    border:1px solid var(--border);
+    font-family:inherit;
+    font-size:14px;
+    resize:vertical;
+    background:white;
+}
+
+textarea:focus{
+    outline:none;
+    border-color:var(--navy);
+}
+
+.scale{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:8px;
+}
+
+.scale label{
+    flex:1;
+    min-width:140px;
+    margin:0;
+    padding:10px;
+    border:1px solid var(--border);
+    background:white;
+    text-align:center;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.scale label input{
+    margin:0 0 5px 0;
+}
+
+.scale .num-only{
+    flex:0 0 60px;
+    min-width:60px;
+    font-weight:600;
+}
+
+.btn-wrap{
+    text-align:center;
+    margin-top:40px;
+    padding-top:30px;
+    border-top:1px solid var(--border);
+}
+
+button{
+    background:var(--navy);
+    color:white;
+    border:none;
+    padding:16px 50px;
+    font-size:16px;
+    font-weight:600;
+    border-radius:8px;
+    cursor:pointer;
+    letter-spacing:0.5px;
+    transition:background 0.2s;
+}
+
+button:hover{
+    background:var(--navy-dark);
+}
+
+.footer{
+    background:#FBFCFE;
+    padding:20px 50px;
+    text-align:center;
+    color:var(--gray);
+    font-size:12px;
+    border-top:1px solid var(--border);
+}
+
+@media (max-width:600px){
+    .header{padding:30px 25px;}
+    .header h1{font-size:22px;}
+    .intro,form,.footer{padding-left:25px;padding-right:25px;}
+    .question{padding:14px 16px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>АНКЕТА</h1>
+        <h2>Примена GPS и телематичких система у међуградском аутобуском превозу</h2>
+    </div>
+
+    <div class="intro">
+        <p>Поштовани путници,</p>
+        <p>Ова анкета спроводи се у сврху израде <strong>семинарског рада из области друмског саобраћаја</strong>, са циљем испитивања ставова путника о квалитету услуге и могућности унапређења међуградског аутобуског превоза применом савремених <strong>телематичких система</strong>, са посебним освртом на платформе попут <em>Geotab-а</em>.</p>
+        <p>Анкета је у потпуности <strong>анонимна</strong>, прикупљени подаци биће коришћени искључиво у образовне сврхе. Попуњавање траје око <strong>5 минута</strong> и састоји се од 18 питања. Хвала на одвојеном времену.</p>
+    </div>
+
+    <form>
+
+        <!-- ===== I деo - Демографски подаци ===== -->
+        <div class="section-title">I део – Општи подаци о испитанику</div>
+
+        <div class="question">
+            <h3><span class="num">1</span>Пол</h3>
+            <label><input type="radio" name="q1"> Мушки</label>
+            <label><input type="radio" name="q1"> Женски</label>
+            <label><input type="radio" name="q1"> Не желим да се изјасним</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">2</span>Старосна група</h3>
+            <label><input type="radio" name="q2"> До 18 година</label>
+            <label><input type="radio" name="q2"> 18 – 25 година</label>
+            <label><input type="radio" name="q2"> 26 – 40 година</label>
+            <label><input type="radio" name="q2"> 41 – 60 година</label>
+            <label><input type="radio" name="q2"> Преко 60 година</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">3</span>Радни статус</h3>
+            <label><input type="radio" name="q3"> Ученик / студент</label>
+            <label><input type="radio" name="q3"> Запослен</label>
+            <label><input type="radio" name="q3"> Незапослен</label>
+            <label><input type="radio" name="q3"> Пензионер</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">4</span>Место становања</h3>
+            <label><input type="radio" name="q4"> Београд</label>
+            <label><input type="radio" name="q4"> Други град у Србији</label>
+            <label><input type="radio" name="q4"> Сеоско подручје</label>
+            <label><input type="radio" name="q4"> Иностранство</label>
+        </div>
+
+        <!-- ===== II део - Навике у коришћењу превоза ===== -->
+        <div class="section-title">II део – Навике у коришћењу превоза</div>
+
+        <div class="question">
+            <h3><span class="num">5</span>Колико често користите међуградски аутобуски превоз?</h3>
+            <label><input type="radio" name="q5"> Свакодневно</label>
+            <label><input type="radio" name="q5"> Неколико пута недељно</label>
+            <label><input type="radio" name="q5"> Неколико пута месечно</label>
+            <label><input type="radio" name="q5"> Неколико пута годишње</label>
+            <label><input type="radio" name="q5"> Ретко или никада</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">6</span>Који је најчешћи разлог Вашег путовања? (могуће више одговора)</h3>
+            <label><input type="checkbox" name="q6"> Посао</label>
+            <label><input type="checkbox" name="q6"> Школовање</label>
+            <label><input type="checkbox" name="q6"> Породичне посете</label>
+            <label><input type="checkbox" name="q6"> Туризам и одмор</label>
+            <label><input type="checkbox" name="q6"> Лекарски прегледи</label>
+            <label><input type="checkbox" name="q6"> Остало</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">7</span>На који начин најчешће купујете аутобуску карту?</h3>
+            <label><input type="radio" name="q7"> На каси аутобуске станице</label>
+            <label><input type="radio" name="q7"> Код возача у возилу</label>
+            <label><input type="radio" name="q7"> Преко интернета (web сајт превозника)</label>
+            <label><input type="radio" name="q7"> Преко мобилне апликације</label>
+        </div>
+
+        <!-- ===== III део - Информисаност и кашњења ===== -->
+        <div class="section-title">III део – Информисаност путника и тачност превоза</div>
+
+        <div class="question">
+            <h3><span class="num">8</span>Да ли сте се у току претходне године нашли у ситуацији да аутобус касни?</h3>
+            <label><input type="radio" name="q8"> Редовно – на скоро сваком путовању</label>
+            <label><input type="radio" name="q8"> Често</label>
+            <label><input type="radio" name="q8"> Повремено</label>
+            <label><input type="radio" name="q8"> Ретко</label>
+            <label><input type="radio" name="q8"> Никада</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">9</span>Како оцењујете тренутну информисаност путника о реду вожње и евентуалним кашњењима?</h3>
+            <div class="scale">
+                <label class="num-only"><input type="radio" name="q9"> 1<br><span style="font-size:11px;color:var(--gray);">врло лоше</span></label>
+                <label class="num-only"><input type="radio" name="q9"> 2</label>
+                <label class="num-only"><input type="radio" name="q9"> 3<br><span style="font-size:11px;color:var(--gray);">осредње</span></label>
+                <label class="num-only"><input type="radio" name="q9"> 4</label>
+                <label class="num-only"><input type="radio" name="q9"> 5<br><span style="font-size:11px;color:var(--gray);">одлично</span></label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">10</span>Да ли користите мобилне апликације или интернет странице за проверу реда вожње и куповину карата?</h3>
+            <label><input type="radio" name="q10"> Да, редовно</label>
+            <label><input type="radio" name="q10"> Понекад</label>
+            <label><input type="radio" name="q10"> Не, али бих волео/волела када би биле доступније</label>
+            <label><input type="radio" name="q10"> Не и не интересује ме</label>
+        </div>
+
+        <!-- ===== IV део - Очекивања од GPS система ===== -->
+        <div class="section-title">IV део – Очекивања од GPS и телематичких система</div>
+
+        <div class="question">
+            <h3><span class="num">11</span>Колико би Вам биле важне информације о тренутној локацији аутобуса у реалном времену?</h3>
+            <label><input type="radio" name="q11"> Веома важне</label>
+            <label><input type="radio" name="q11"> Важне</label>
+            <label><input type="radio" name="q11"> Делимично важне</label>
+            <label><input type="radio" name="q11"> Нису важне</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">12</span>Колико би GPS праћење возила повећало Ваше поверење у превозника?</h3>
+            <label><input type="radio" name="q12"> Значајно</label>
+            <label><input type="radio" name="q12"> Делимично</label>
+            <label><input type="radio" name="q12"> Врло мало</label>
+            <label><input type="radio" name="q12"> Не би утицало</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">13</span>Која је, по Вашем мишљењу, највећа предност GPS система у међуградском превозу? (изаберите до три одговора)</h3>
+            <label><input type="checkbox" name="q13"> Праћење возила у реалном времену</label>
+            <label><input type="checkbox" name="q13"> Тачније информације о кашњењу</label>
+            <label><input type="checkbox" name="q13"> Већа безбедност путника</label>
+            <label><input type="checkbox" name="q13"> Боља организација и пресвезивања на стајалиштима</label>
+            <label><input type="checkbox" name="q13"> Прецизнији долазак на стајалишта</label>
+            <label><input type="checkbox" name="q13"> Брже реаговање на кварове и нежељене ситуације</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">14</span>Да ли бисте користили апликацију превозника која омогућава „live” праћење аутобуса на мапи?</h3>
+            <label><input type="radio" name="q14"> Да, користио/користила бих је редовно</label>
+            <label><input type="radio" name="q14"> Да, повремено</label>
+            <label><input type="radio" name="q14"> Не</label>
+            <label><input type="radio" name="q14"> Нисам сигуран/сигурна</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">15</span>Колико сте упознати са постојањем телематичких система (попут <em>Geotab</em>) који омогућавају праћење и оптимизацију возних паркова?</h3>
+            <label><input type="radio" name="q15"> У потпуности упознат</label>
+            <label><input type="radio" name="q15"> Делимично</label>
+            <label><input type="radio" name="q15"> Чуо/чула сам, али не знам детаље</label>
+            <label><input type="radio" name="q15"> Уопште нисам упознат/упозната</label>
+        </div>
+
+        <!-- ===== V део - Општа оцена и предлози ===== -->
+        <div class="section-title">V део – Оцена квалитета и предлози</div>
+
+        <div class="question">
+            <h3><span class="num">16</span>Како оцењујете тренутни квалитет међуградског аутобуског превоза у Србији?</h3>
+            <div class="scale">
+                <label class="num-only"><input type="radio" name="q16"> 1<br><span style="font-size:11px;color:var(--gray);">врло лош</span></label>
+                <label class="num-only"><input type="radio" name="q16"> 2</label>
+                <label class="num-only"><input type="radio" name="q16"> 3<br><span style="font-size:11px;color:var(--gray);">осредњи</span></label>
+                <label class="num-only"><input type="radio" name="q16"> 4</label>
+                <label class="num-only"><input type="radio" name="q16"> 5<br><span style="font-size:11px;color:var(--gray);">одличан</span></label>
+            </div>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">17</span>Да ли сматрате да би увођење савремених телематичких система побољшало квалитет међуградског превоза?</h3>
+            <label><input type="radio" name="q17"> У значајној мери</label>
+            <label><input type="radio" name="q17"> Делимично</label>
+            <label><input type="radio" name="q17"> У мањој мери</label>
+            <label><input type="radio" name="q17"> Не би имало утицаја</label>
+        </div>
+
+        <div class="question">
+            <h3><span class="num">18</span>Шта бисте највише унапредили у међуградском аутобуском превозу? (отворен одговор)</h3>
+            <textarea placeholder="Унесите Ваш одговор..."></textarea>
+        </div>
+
+        <div class="btn-wrap">
+            <button type="submit">Пошаљи анкету</button>
+        </div>
+
+    </form>
+
+    <div class="footer">
+        Анкета је део семинарског рада из области друмског саобраћаја.<br>
+        Сви подаци су анонимни и користе се искључиво у образовне сврхе.
+    </div>
+
+</div>
+
+</body>
+</html>
